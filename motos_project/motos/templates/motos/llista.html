@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Llista de Motos</title>
+    <link rel="stylesheet" href="{% static 'motos/css/styles.css' %}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Llista de Motos</h1>
+
+    <a href="{% url 'crear_moto' %}">Nova Moto</a>
+
+    <hr>
+
+    {% for moto in motos %}
+        <div class="moto-card">
+            <h3>{{ moto.model }}</h3>
+            <p><strong>Fabricant:</strong> {{ moto.fabricant }}</p>
+            <p><strong>Any:</strong> {{ moto.any }}</p>
+            <p><strong>Pilots:</strong>
+                {% for pilot in moto.pilots.all %}
+                    {{ pilot.nom }}{% if not forloop.last %}, {% endif %}
+                {% endfor %}
+            </p>
+
+            <div class="actions">
+                <a href="{% url 'editar_moto' moto.id %}">Editar</a>
+                <a href="{% url 'eliminar_moto' moto.id %}">Eliminar</a>
+            </div>
+        </div>
+    {% empty %}
+        <p>No hi ha motos encara.</p>
+    {% endfor %}
+</div>
+
+</body>
+</html>
