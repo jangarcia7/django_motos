@@ -220,3 +220,9 @@ En aquest projecte s’ha convertit un array multidimensional en una aplicació 
 - Publicació a GitHub  
 
 El projecte compleix tots els requisits demanats a l’enunciat i funciona correctament.
+
+# Vídeo demostratiu
+
+El vídeo amb la demostració del funcionament del projecte es pot consultar al següent enllaç:
+
+https://drive.google.com/drive/folders/1dxJtXDyAFivX7GtE0W4dMcBd0fRONpAO?usp=sharing
